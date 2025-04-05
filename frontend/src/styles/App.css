@@ -1,0 +1,226 @@
+/* === Global Reset & Base === */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #eef1f6, #f7f1f9);
+  color: #1e1e2f;
+  min-height: 100vh;
+  overflow-x: hidden;
+  animation: fadeInBody 0.6s ease-in;
+  line-height: 1.6;
+}
+
+/* === Container === */
+.container {
+  max-width: 920px;
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  animation: slideIn 0.6s ease;
+}
+
+/* === Typography === */
+h1, h2, h3 {
+  color: #2c2c5a;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* === Form Elements === */
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 1rem;
+  border: 1px solid #d0d0d5;
+  border-radius: 10px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: #fafafa;
+}
+
+textarea:focus {
+  border-color: #7e3ff2;
+  box-shadow: 0 0 0 4px rgba(126, 63, 242, 0.15);
+  outline: none;
+}
+
+/* === Buttons === */
+button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #5423b7, #1e61d6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(81, 104, 255, 0.25);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* === Lists === */
+ul {
+  list-style: disc inside;
+  padding-left: 1rem;
+}
+
+/* === Results Section === */
+.results {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  background: #f4f0fc;
+  border-left: 5px solid #8e44ad;
+  border-radius: 10px;
+  animation: fadeInResult 0.5s ease;
+  font-size: 0.98rem;
+}
+
+/* === Upload Section === */
+.upload-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  animation: scaleIn 0.5s ease;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.upload-form input[type="file"] {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.upload-form input[type="file"]:hover {
+  border-color: #6a11cb;
+}
+
+.upload-result {
+  margin-top: 20px;
+  background: #f9f7ff;
+  padding: 16px;
+  border-left: 4px solid #28a745;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  font-family: 'Courier New', Courier, monospace;
+  animation: fadeInResult 0.5s ease-in;
+  font-size: 0.95rem;
+}
+
+/* === Page Wrapper === */
+.page-wrapper {
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Animations === */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInResult {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* === Loader Overlay === */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.spinner {
+  border: 8px solid #eee;
+  border-top: 8px solid #6a11cb;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.2rem;
+}
+
+.loader-overlay p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

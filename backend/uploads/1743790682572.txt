@@ -1,0 +1,13 @@
+2️⃣ Test the File Upload Endpoint (/upload)
+🛠 Steps in Postman
+Open Postman
+
+Select POST method
+
+Enter http://127.0.0.1:5000/upload in the URL
+
+Go to Body → form-data
+
+Add a key named file, set type to File, and upload a document
+
+Click Send
